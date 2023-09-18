@@ -8,9 +8,11 @@ When done, make a pull request and tag @AnhThuongVo.
 Respond to my comments by making new commits to the same branch.
 
 ## Review
-1. In your own words, explain what an ArrayList is. 
+1. In your own words, explain what an ArrayList is.
+   A list that you are able to grow and shrink in size. You are also able to do get numbers by their index.
 
 2. In your own words, explain what a LinkedList is. How is it different from an ArrayList?
+  A linkedList is a linear data structure. LinkedList is stored as nodes, where each node contains information. This is different from an ArrayList because a LinkedList is better for adding and deleting data and an ArrayList is better for reading data. 
 
 ## Exploration
 
@@ -49,11 +51,17 @@ b. The `resize()` method is a bit more complicated. The memory diagrams, below, 
     c. Finally, update your `add()` method to make use of `resize()`. Your implementation of MyArrayList is now complete.
 
 3. To complete our MyLinkedList implementation, we only need to add one method: `remove()`.    
-a. Why do we _not_ need a `resize()` method for MyLinkedList?  
-b. The code for the `remove()` method can be broken down into four cases. What are they? What should the code do in each case?  
+a. Why do we _not_ need a `resize()` method for MyLinkedList?
+    You do not need a 'resize()' method for MyLinkedList because elements are not stored in a direct memory location
+    like an Array. A linked list only adds nodes to the end of the chain, resulting in no need for a resize method.
+b. The code for the `remove()` method can be broken down into four cases. What are they? What should the code do in each case?
+    The first case is that it would remove the "head" of the chain, or the first node. The second case is that it would remove a node in the middle of the chain (prevNode.next.next;//size--). The third case is it would remove the "tail" of the chain (tail = prevNode;//size--;). The final case would be an invalid index. This will result in the code returning "Index out of bounds." (throw new IndexOutOfBoundsException("Index out of bounds"))
+     
 c. Write the code for `remove()`.  Your implementation of MyLinkedList is now complete.
 
-4. Sections 4.6-4.8 of Zybooks describe a data structure called the doubly-linked list. in short, the main distinguishing feature of a doubly-linked list is that nodes have both `next` and `prev` pointers, that point to the next node and the previous node respectively. This means that the code for a doubly-linked list is almost exactly the same as that for a singly-linked lists, except for the node pointers that you have to change when adding and removing elements.    
-a. Without writing any code, explain how you would need to modify your MyLinkedList `add()` method to turn your implementation into a doubly-linked list.  
+5. Sections 4.6-4.8 of Zybooks describe a data structure called the doubly-linked list. in short, the main distinguishing feature of a doubly-linked list is that nodes have both `next` and `prev` pointers, that point to the next node and the previous node respectively. This means that the code for a doubly-linked list is almost exactly the same as that for a singly-linked lists, except for the node pointers that you have to change when adding and removing elements.    
+a. Without writing any code, explain how you would need to modify your MyLinkedList `add()` method to turn your implementation into a doubly-linked list.
+    To update the 'add()' of MyLinkedList into a doubly-linked list you would have to create a new node for the new element. Then you would have set the current node to point towards the new node. Next, you would have to set the new node to point towards the current node. Then, change the tail to point towards the new node.
 b. Without writing any code, explain how you would need to modify your MyLinkedList `remove()` method to turn your implementation into a doubly-linked list. How would each of the four cases change?
+    To update the 'remove()' method, you would have to change the 'next' function to have the previous node skip the node that is being taken out. Then, you would have to change the next node to point towards the previous node.
 
