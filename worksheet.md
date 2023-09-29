@@ -1,3 +1,6 @@
+Feedback: For the MyLinkList class: remove the ";" in the if statement in the get() method. Does not pass test 3. You may revise and turn in before 10/05/
+
+
 # 9/11 Worksheet: ArrayLists and LinkedLists
 ## Initial due date: *09/18 @11:59pm*
 
